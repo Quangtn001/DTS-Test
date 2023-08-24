@@ -32,30 +32,29 @@ function App() {
     setSortedArrays(sortedArraysData);
   };
   return (
-    <div className="App">
-      <h1>Sorting Algorithm Comparison</h1>
-      <button
-        style={{ marginRight: "10px" }}
-        onClick={generateRandomArrayHandler}
-      >
-        Generate Random Array
-      </button>
-      <button onClick={sortArrayHandler}>Sort Array</button>
-
-      <div className="array-container">
-        {array.map((value, idx) => (
-          <div
-            key={idx}
-            className="array-bar"
-            style={{ height: `${value}px` }}
-          ></div>
-        ))}
+    <div style={{ padding: "10px" }} className="App">
+      <div style={{ textAlign: "center" }}>
+        <h1>NGUYEN BA QUANG - DTS TEST</h1>
+        <button
+          style={{ marginRight: "10px" }}
+          onClick={generateRandomArrayHandler}
+        >
+          Generate Random Array
+        </button>
+        <button onClick={sortArrayHandler}>Sort Array</button>
       </div>
-
+      <div className="random-array">
+        <p>
+          <span style={{ fontWeight: "bold", fontSize: "26px" }}>
+            Random Array
+          </span>
+          : {array ? `[${array.join(", ")}]` : "[]"}
+        </p>
+      </div>
       <div className="sorted-arrays">
         {Object.keys(sortedArrays).map((algorithm, index) => (
           <div key={index}>
-            <h2>{algorithm}</h2>
+            <h2 style={{ textTransform: "capitalize" }}>{algorithm}</h2>
             <p>
               <span style={{ fontWeight: "bold" }}> Sorted Array</span>:{" "}
               {sortedArrays[algorithm].sortedArray.join(", ")}
